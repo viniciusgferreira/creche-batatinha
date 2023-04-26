@@ -1,0 +1,224 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.cabecalhoPrincipal {
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-cabecalho {
+    max-width: 10em;
+    margin: 0 10em;
+}
+
+.navegacaoLinks {
+    max-width: fit-content;
+    margin-right: 45px;
+}
+.link-lista {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    color: #EB339B;
+    background-color: #fff;
+    text-decoration: none;
+    border: 2px solid #EB339B;
+    border-radius: 4px;
+}
+
+.link-cadastro .botao-cadastro {
+    margin: 0 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #EB339B;
+    color: #fff;
+    border: 2px solid #EB339B;
+    border-radius: 4px;
+}
+
+
+.conteudo-principal {
+    display: flex;
+    position:absolute;
+    align-content: center;
+    padding: 60px 0;
+    margin-left: 25%;
+    margin-right: 10%;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.texto-saudacao {
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    color:black;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.texto-auxiliar {
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    text-align: justify;
+    color: #575555;
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        width: 100%;
+    }
+    
+    .container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #fff;
+    }
+
+    .logo-cabecalho {
+        max-width: 20em;
+        margin: 1em auto;
+    }
+
+    .navegacaoLinks {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1em auto;
+    }
+
+    .link-lista {
+        font-size: 1rem;
+        padding: 15px 30px;
+        color: #EB339B;
+        background-color: #fff;
+        text-decoration: none;
+        border: 2px solid #EB339B;
+        border-radius: 4px;
+    }
+
+    .link-cadastro .botao-cadastro {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        padding: 12px 40px;
+        background-color: #EB339B;
+        color: #fff;
+        border: 3px solid #EB339B;
+        border-radius: 4px;
+    }
+    .conteudo-principal{
+        max-width: fit-content;
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 5% 15%;
+    }
+    
+    .textos {
+        max-width: 85%;
+        margin-left: 10%;
+    }
+    
+    .texto-saudacao {
+        margin: 0 auto;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem;
+        color:black;
+    }
+
+    .texto-auxiliar {
+        margin: 20px auto;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.5rem;
+        text-align: justify;
+        color: #575555;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 900px) {
+
+    body {
+        width: 100%;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #fff;
+    }
+
+    .logo-cabecalho {
+        max-width: 7em;
+        margin: 0 2em;
+    }
+
+    .link-lista {
+        font-size: 12px;
+        padding: 7px 14px;
+        margin-bottom: 10px;
+        color: #EB339B;
+        background-color: #fff;
+        text-decoration: none;
+        border: 2px solid #EB339B;
+        border-radius: 4px;
+    }
+    
+    .link-cadastro .botao-cadastro {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        padding: 7px 14px;
+        background-color: #EB339B;
+        color: #fff;
+        border: 2px solid #EB339B;
+        border-radius: 4px;
+    }
+
+    .conteudo-principal{
+        max-width: fit-content;
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 5% 15%;
+    }
+
+    .textos {
+        max-width: 85%;
+        margin-left: 10%;
+    }
+    .texto-saudacao {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 32px;
+        color:black;
+    }
+
+    .texto-auxiliar {
+        margin: 20px auto;
+        font-family: 'Roboto', sans-serif;
+        font-size: 24px;
+        text-align: justify;
+        color: #575555;
+    }
+    
+}
