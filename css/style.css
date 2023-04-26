@@ -23,6 +23,7 @@ body {
     max-width: fit-content;
     margin-right: 45px;
 }
+
 .link-lista {
     font-size: 16px;
     padding: 10px 20px;
@@ -43,12 +44,13 @@ body {
     color: #fff;
     border: 2px solid #EB339B;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 
 .conteudo-principal {
     display: flex;
-    position:absolute;
+    position: absolute;
     align-content: center;
     padding: 60px 0;
     margin-left: 25%;
@@ -63,7 +65,7 @@ h1 {
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
     font-size: 64px;
-    color:black;
+    color: black;
 }
 
 h2 {
@@ -83,7 +85,7 @@ h2 {
     body {
         width: 100%;
     }
-    
+
     .container {
         display: flex;
         width: 100%;
@@ -122,24 +124,26 @@ h2 {
         color: #fff;
         border: 3px solid #EB339B;
         border-radius: 4px;
+        cursor: pointer;
     }
-    .conteudo-principal{
+
+    .conteudo-principal {
         max-width: fit-content;
         display: flex;
         flex-direction: column;
         margin: 0 0 5% 15%;
     }
-    
+
     .textos {
         max-width: 85%;
         margin-left: 10%;
     }
-    
+
     .texto-saudacao {
         margin: 0 auto;
         font-family: 'Montserrat', sans-serif;
         font-size: 2rem;
-        color:black;
+        color: black;
     }
 
     .texto-auxiliar {
@@ -180,7 +184,7 @@ h2 {
         border: 2px solid #EB339B;
         border-radius: 4px;
     }
-    
+
     .link-cadastro .botao-cadastro {
         margin-right: 1em;
         margin-left: 1.5em;
@@ -191,9 +195,10 @@ h2 {
         color: #fff;
         border: 2px solid #EB339B;
         border-radius: 4px;
+        cursor: pointer;
     }
 
-    .conteudo-principal{
+    .conteudo-principal {
         max-width: fit-content;
         display: flex;
         flex-direction: column;
@@ -204,13 +209,14 @@ h2 {
         max-width: 85%;
         margin-left: 10%;
     }
+
     .texto-saudacao {
         display: flex;
         flex-direction: column;
         justify-content: center;
         font-family: 'Montserrat', sans-serif;
         font-size: 32px;
-        color:black;
+        color: black;
     }
 
     .texto-auxiliar {
@@ -220,5 +226,5 @@ h2 {
         text-align: justify;
         color: #575555;
     }
-    
+
 }
