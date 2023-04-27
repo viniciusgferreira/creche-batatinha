@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="./css/cadastro.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
-    <script src='./assets/main.js'></script>
 </head>
 
 <body>
+    <script src="./js/script.js"></script>
     <header class="cabecalhoPrincipal">
         <div class="container">
             <a class="logo" href="index.html">
@@ -31,9 +31,9 @@
     <main class="formularioCadastro">
         <form class="caixa" onsubmit="return criarGato();">
             <h1 class="tituloFormulario">Cadastro de um novo Miau</h1>
-            <div class="uploadImagem">
-                <input type="file" name="" id="inputCatPhoto" class="imagemPerfil" accept="image/jpeg, image/png, image/jpg">
-                <output></output>
+            <div class="areaUpload" id="imagemGato">
+                <label for="inputCatPhoto" class="botaoUpload"><label for="inputCatPhoto" class="textoUpload">+ Clique para adicionar foto</label>
+                <input type="file" name="" id="inputCatPhoto" class="imagemPerfil" accept="image/jpeg, image/png, image/jpg" hidden/>
             </div>
             <div class="inputs">
                 <input type="text" id="inputCatName" class="inputNomeMiau" placeholder="Nome do(a) Miau" required>
@@ -43,8 +43,9 @@
             </div>
             <div class="botoes">
                 <a href=><button class="botaoCancelar">Cancelar cadastro</button></a>
-                <a href=""><button class="botaoCadastrar" type="submit">Salvar dados</button></a>
+                <a href=""><button class="botaoCadastrar" id="botaoCadastro" type="submit">Salvar dados</button></a>
             </div>
         </form>
     </main>
+    
 </body>

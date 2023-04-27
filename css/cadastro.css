@@ -18,28 +18,34 @@
     padding: 40px 20px;
 }
 
-.uploadImagem{
-    width: 95px;
-    height: 105px;
-    flex-direction: column;
-    align-items: center;
+.areaUpload{
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #d9d9d9;
+    background-image: url("../images/catImage.png");
     justify-content: center;
-    margin: .5em 15%;
-}
+    background-position: center;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.411), rgba(71, 71, 71, 0.404)), url("../images/catImage.png");
+    background-size:cover;
 
-.imagemPerfil{
-    width: 95px;
-    height: 105px;
-    border-radius: 4%;
-    border: 1px solid #fff;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    margin: 0 0 1em 0;
-    cursor: pointer;
 }
-
-.file-upload-button {
-    font-family: "Roboto", sans-serif;
-    font-size: 1rem;
+.textoUpload {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 25px;
+    color: #ffffff;
+    justify-content: center;
+    vertical-align: middle;
+    bottom: 51.5%;
+    width: 125px;
+    height: auto;
 }
 
 .inputs {
@@ -114,7 +120,7 @@ input[type="text"]::placeholder {
     border-radius: 4px;
 }
 
-.botaoCadastrar{
+.botaoCadastrar, .botaoCadastrar:enabled{
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     padding: 10px 80px;
@@ -123,6 +129,14 @@ input[type="text"]::placeholder {
     border: 2.5px solid #EB339B;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.botaoCadastrar:disabled,
+.botaoCadastrar--desabilitado {
+  background-color: #9f9f9f;
+  border: 2.5px solid #9f9f9f;
+  color: white;
+  cursor: not-allowed;
 }
 
 h1 {
