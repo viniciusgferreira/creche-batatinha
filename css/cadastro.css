@@ -1,0 +1,132 @@
+.formularioCadastro {
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.caixa {
+    display: flex;
+    width: 600px;
+    height: fit-content;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 60px auto;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 40px 20px;
+}
+
+.uploadImagem{
+    width: 95px;
+    height: 105px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: .5em 15%;
+}
+
+.imagemPerfil{
+    width: 95px;
+    height: 105px;
+    border-radius: 4%;
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 0 0 1em 0;
+    cursor: pointer;
+}
+
+.file-upload-button {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+}
+
+.inputs {
+    display: block;
+    width: 560px;
+    height: fit-content;
+    margin-left: 22px;
+    margin-right: 20px;
+    top: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputNomeMiau {
+    height: 3.5em;
+    width: 550px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.inputNomeDono{
+    height: 3.5em;
+    width: 550px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 0 rgba(29, 28, 28, 0.2);
+}
+
+input[type="text"]::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    color: #999;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    padding: 0 5px;
+  }
+
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    justify-content: space-evenly;
+}
+
+.botaoCancelar .botaoCadastrar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.botaoCancelar{
+    font-size: 1rem;
+    padding: 10.5px 70px;
+    color: #EB339B;
+    background-color: #fff;
+    text-decoration: none;
+    border: 2px solid #EB339B;
+    border-radius: 4px;
+}
+
+.botaoCadastrar{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    padding: 10px 80px;
+    background-color: #EB339B;
+    color: #fff;
+    border: 2.5px solid #EB339B;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+}

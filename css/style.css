@@ -15,18 +15,18 @@ body {
 }
 
 .logo-cabecalho {
-    max-width: 10em;
-    margin: 0 10em;
+    max-width: 9em;
+    margin-left: 10em;
 }
 
 .navegacaoLinks {
     max-width: fit-content;
-    margin-right: 45px;
+    margin-right: 6.5em;
 }
 
 .link-lista {
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 8px 15px;
     margin-bottom: 10px;
     color: #EB339B;
     background-color: #fff;
@@ -36,10 +36,10 @@ body {
 }
 
 .link-cadastro .botao-cadastro {
-    margin: 0 20px;
+    margin-left: 25px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 8px 20px;
     background-color: #EB339B;
     color: #fff;
     border: 2px solid #EB339B;
@@ -53,7 +53,7 @@ body {
     position: absolute;
     align-content: center;
     padding: 60px 0;
-    margin-left: 25%;
+    margin-left: 24%;
     margin-right: 10%;
 }
 
@@ -80,10 +80,11 @@ h2 {
     color: #575555;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 700px) {
 
     body {
         width: 100%;
+
     }
 
     .container {
@@ -95,20 +96,24 @@ h2 {
     }
 
     .logo-cabecalho {
-        max-width: 20em;
+        width: 100%;
+        min-width: 5em;
         margin: 1em auto;
     }
 
     .navegacaoLinks {
         display: flex;
+        width: fit-content;
         flex-direction: column;
+        justify-content: space-around;
         align-items: center;
         margin: 1em auto;
     }
 
     .link-lista {
+        margin: 0 auto;
         font-size: 1rem;
-        padding: 15px 30px;
+        padding: 1em;
         color: #EB339B;
         background-color: #fff;
         text-decoration: none;
@@ -117,12 +122,13 @@ h2 {
     }
 
     .link-cadastro .botao-cadastro {
+        margin: 10px auto;
+        padding: 1em 1.5em;
         font-family: 'Roboto', sans-serif;
         font-size: 1rem;
-        padding: 12px 40px;
         background-color: #EB339B;
         color: #fff;
-        border: 3px solid #EB339B;
+        border: 2px solid #EB339B;
         border-radius: 4px;
         cursor: pointer;
     }
@@ -130,17 +136,19 @@ h2 {
     .conteudo-principal {
         max-width: fit-content;
         display: flex;
+        justify-content: center;
         flex-direction: column;
-        margin: 0 0 5% 15%;
+        margin: 10px auto;
     }
 
     .textos {
-        max-width: 85%;
-        margin-left: 10%;
-    }
+        max-width: 84%;
+        margin: 0 16%;
+        }
 
     .texto-saudacao {
         margin: 0 auto;
+
         font-family: 'Montserrat', sans-serif;
         font-size: 2rem;
         color: black;
@@ -155,7 +163,7 @@ h2 {
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 900px) {
+@media screen and (min-width: 701px) and (max-width: 900px) {
 
     body {
         width: 100%;
