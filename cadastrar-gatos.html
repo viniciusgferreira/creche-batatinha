@@ -4,13 +4,14 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Creche Batatinha</title>
+    <title>Cadastro de gatos em Creche Batatinha</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel='stylesheet' href='./css/style.css'>
+    <link rel="stylesheet" href="./css/cadastro.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
-    <script src='./js/main.js'></script>
+    <script src='./assets/main.js'></script>
 </head>
 
 <body>
@@ -19,9 +20,8 @@
             <a class="logo" href="index.html">
                 <img class="logo-cabecalho" src="./images/logo-cabecalho.svg" width="250px" height="80px">
             </a>
-
             <nav class="navegacaoLinks">
-                <a class="link-lista" href="listar-gatos.html">Ver Lista de Miaus</a>
+                <a class="link-lista" href="listar-gatos.html">Ver lista de Miaus</a>
                 <a class="link-cadastro" href="cadastrar-gatos.html">
                     <button class="botao-cadastro">Cadastrar Miau</button>
                 </a>
@@ -29,6 +29,22 @@
         </div>
     </header>
     <main class="formularioCadastro">
-        
+        <form class="caixa">
+            <h1 class="tituloFormulario">Cadastro de um novo Miau</h1>
+            <div class="uploadImagem">
+                <input type="file" name="" id="imagem" class="imagemPerfil" accept="image/jpeg, image/png, image/jpg">
+                <output></output>
+            </div>
+            <div class="inputs">    
+                <input type="text" id="name" class="inputNomeMiau" placeholder="Nome do(a) Miau" required>
+            </div>
+            <div class="inputs">
+                <input type="text" id="name" class="inputNomeDono" placeholder="Nome da pessoa dona" required>
+            </div>
+            <div class="botoes">
+                <a href= ><button class="botaoCancelar">Cancelar cadastro</button></a>
+                <a href=""><button class="botaoCadastrar" type="submit">Salvar dados</button></a>
+            </div>
+        </form>
     </main>
 </body>
