@@ -1,6 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-  'use strict';
-  
+ 
   // SALVA OS DADOS DO GATO EM UMA API MOCK
 function criarGato() {
   const inputCatName = document.querySelector('#inputCatName').value;
@@ -48,7 +46,8 @@ function getBase64(file) {
 
   })
 }
-
+document.addEventListener('DOMContentLoaded', function() {
+  'use strict';
 //validação input-botão
   let inputGato = document.getElementById('inputCatName');
   let inputDono = document.getElementById('inputOwnerName');
