@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let inputGato = document.getElementById('inputCatName');
   let inputDono = document.getElementById('inputOwnerName');
   let botao = document.getElementById('botaoCadastro');
-  botao.disabled = true; // desabilita o botão no início
+  botao.disabled = true;
 
   function validarInputs() {
     if (inputGato.value.trim() !== '' && inputDono.value.trim() !== '') {
@@ -63,7 +63,21 @@ document.addEventListener('DOMContentLoaded', function() {
       botao.disabled = true;
     }
   }
+//Ease-in e Ease-out do label
 
   inputGato.addEventListener('input', validarInputs);
   inputDono.addEventListener('input', validarInputs);
+});
+
+inputs = document.querySelectorAll('input');
+
+inputs.forEach(input => {input.addEventListener('blur', function() {
+    if (this.type !== 'file') {
+      if (this.value) {
+        this.classList.add('input--preenchido');
+      } else {
+        this.classList.remove('input--preenchido');
+      }
+    }
+  });
 });
