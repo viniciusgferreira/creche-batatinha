@@ -33,8 +33,10 @@
             <form class="caixa" onsubmit="return criarGato();">
                 <h1 class="tituloFormulario">Cadastro de um novo Miau</h1>
                 <div class="areaUpload" id="imagemGato">
-                    <label for="inputCatPhoto" class="botaoUpload"><p class="textoUpload">+ Clique para adicionar foto</p></label>
-                    <input type="file" name="" id="inputCatPhoto" class="imagemPerfil" accept="image/jpeg, image/png, image/jpg" hidden/>
+                    <label for="inputCatPhoto" class="botaoUpload">
+                        <p class="textoUpload">+ Clique para adicionar foto</p>
+                    </label>
+                    <input type="file" name="" id="inputCatPhoto" class="imagemPerfil" accept="image/jpeg, image/png, image/jpg" hidden />
                 </div>
                 <span class="inputs">
                     <input type="text" id="inputCatName" class="inputNomeMiau" required>
@@ -44,13 +46,13 @@
                     <input type="text" id="inputOwnerName" class="inputNomeDono" required>
                     <label for="inputOwnerName">Nome da pessoa dona</label>
                 </span>
-            </form>
                 <span class="botoes">
                     <a href="index.html"><button class="botaoCancelar" formnovalidate>Cancelar cadastro</button></a>
                     <a href=""><button class="botaoCadastrar" id="botaoCadastro" type="submit">Salvar dados</button></a>
                 </span>
+            </form>
         </div>
 
     </main>
-    
+
 </body>
