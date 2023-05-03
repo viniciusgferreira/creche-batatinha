@@ -1,54 +1,59 @@
- 
-  // SALVA OS DADOS DO GATO EM UMA API MOCK
-function criarGato() {
+'use strict'
+
+// SALVA OS DADOS DO GATO EM UMA API MOCK
+async function criarGato() {
   const inputCatName = document.querySelector('#inputCatName').value;
   const inputOwnerName = document.querySelector('#inputOwnerName').value;
   const inputCatPhoto = document.querySelector('#inputCatPhoto').files[0];
 
   const url = 'https://644a8480a8370fb321510499.mockapi.io/api/v1/gatos';
 
-  getBase64(inputCatPhoto)
-      .then(async (base64) => {
-          await fetch(url, {
-              method: "POST",
-              body: JSON.stringify({
-                  nomeGato: inputCatName,
-                  nomeDono: inputOwnerName,
-                  notaGato: 0,
-                  fotoGato: base64
-              }),
-              headers: {
-                  "Content-type": "application/json; charset=UTF-8"
-              }
-          });
-      })
-      .catch((error) => console.log(error))
-      .finally(() => {
-          console.log('data saved.')
-          window.location.href = 'listar-gatos.html?added=1'
-      })
+  let base64 = '';
+  if (inputCatPhoto) {
+    console.log(inputCatPhoto)
+    base64 = await getBase64(inputCatPhoto)
+  }
 
-  return false;
+  const response = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify({
+      nomeGato: inputCatName,
+      nomeDono: inputOwnerName,
+      notaGato: 0,
+      fotoGato: base64
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  });
+
+  if (response.ok) {
+    window.location.href = 'listar-gatos.html?added=1'
+  } else {
+    console.log(response.statusText)
+  }
+
 }
+
 
 // CONVERTE O ARQUIVO/IMAGEM DO GATO EM STRING BASE64 
 function getBase64(file) {
   return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onloadend = function () {
-          resolve(reader.result)
-      };
-      reader.onerror = function (error) {
-          console.log('Error: ', error);
-          reject(error)
-      };
+    const reader = new FileReader();
+    reader.onloadend = function () {
+      resolve(reader.result)
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+      reject(error)
+    };
+    reader.readAsDataURL(file);
 
   })
 }
-document.addEventListener('DOMContentLoaded', function() {
-  'use strict';
-//validação input-botão
+
+document.addEventListener('DOMContentLoaded', function () {
+  //validação input-botão
   let inputGato = document.getElementById('inputCatName');
   let inputDono = document.getElementById('inputOwnerName');
   let botao = document.getElementById('botaoCadastro');
@@ -63,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
       botao.disabled = true;
     }
   }
-//Ease-in e Ease-out do label
+  //Ease-in e Ease-out do label
 
   inputGato.addEventListener('input', validarInputs);
   inputDono.addEventListener('input', validarInputs);
@@ -71,7 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 inputs = document.querySelectorAll('input');
 
-inputs.forEach(input => {input.addEventListener('blur', function() {
+inputs.forEach(input => {
+  input.addEventListener('blur', function () {
     if (this.type !== 'file') {
       if (this.value) {
         this.classList.add('input--preenchido');
