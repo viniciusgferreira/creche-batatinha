@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cadastro de gatos em Creche Batatinha</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel='stylesheet' href='./assets/css/style.css'>
+    <link rel="stylesheet" href="./assets/css/lancar-notas.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+</head>
+
+<body>
+    <header class="cabecalhoPrincipal">
+        <div class="container">
+            <a class="logo" href="index.html">
+                <img class="logo-cabecalho" alt="Logo Creche Batatinha" src="./assets/img/logo-cabecalho.svg" width="250px" height="80px">
+            </a>
+
+            <nav class="navegacaoLinks">
+                <a class="link-lista" href="listar-gatos.html">Ver lista de Miaus</a>
+                <a class="link-cadastro" href="cadastrar-gatos.html">
+                    <button class="botao-cadastro">Cadastrar Miau</button>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="lançarNotas">
+        <form class="caixa" id="formNotas" onsubmit="lançarNotas(); return false">
+            <div class="cabeçalhoLançarNotas">
+                <button>Voltar</button>
+                <div class="dadosGato">
+                    <img src="./assets/img/catImage.png" width="50px" height="50px">
+                    <h1>Nome do Gato</h1>
+                </div>
+                <span>Data</span>
+            </div>
+
+            <ul>
+                <li class="itemLançarNotas">
+                    <div>
+                        <h2>Socialização</h2>
+                        <span>Brinca com outros gatinhos?</span>
+                    </div>
+                    <div class="patas">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                    </div>
+                </li>
+
+                <li class="itemLançarNotas">
+                    <div>
+                        <h2>Sonequinha</h2>
+                        <span>Tira bastante soninho?</span>
+                    </div>
+                    <div class="patas">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                    </div>
+                </li>
+
+                <li class="itemLançarNotas">
+                    <div>
+                        <h2>Alimentação</h2>
+                        <span>Está comendo direitinho?</span>
+                    </div>
+                    <div class="patas">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                    </div>
+                </li>
+
+                <li class="itemLançarNotas">
+                    <div>
+                        <h2>Brincadeiras</h2>
+                        <span>Participa das brincadeiras em grupo?</span>
+                    </div>
+                    <div class="patas">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                    </div>
+                </li>
+
+                <li class="itemLançarNotas">
+                    <div>
+                        <h2>Preguicinha</h2>
+                        <span>Está mais agitado ou mais quietinho?</span>
+                    </div>
+                    <div class="patas">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                    </div>
+                </li>
+
+                <li class="itemLançarNotas">
+                    <div>
+                        <h2>Fotos</h2>
+                        <span>Deixa as titias tirarem fotos?</span>
+                    </div>
+                    <div class="patas">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios-filled/50/null/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                        <img class="iconeGato" src="https://img.icons8.com/ios/50/000000/cat-footprint.png">
+                    </div>
+                </li>
+            </ul>
+
+            <span class="botoes">
+                <a href="listar-gatos.html"><button class="botaoImprimir" type="button" formnovalidate>Imprimir boletim</button></a>
+                <a href=""><button class="botaoSalvar" id="botaoCadastro" type="submit">Salvar notas</button></a>
+            </span>
+        </form>
+    </main>
+</body>
+
+</html>
