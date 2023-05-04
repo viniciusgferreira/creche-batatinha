@@ -7,14 +7,16 @@
 }
 
 h1{
+    display: flex;
+    flex-direction: row-reverse;
     justify-content: center;
-    padding: 20px;
+    padding: 25px 0;
 }
 
 .formulario{
     display: flex;
     width: 600px;
-    height: fit-content;
+    height: 460px;
     background-color: #fff;
     flex-direction: column;
     align-items: center;
@@ -67,7 +69,7 @@ h1{
 }
   
 .inputs {
-  display: block;
+    display: block;
     width: 560px;
     height: fit-content;
     margin-left: 22px;
@@ -79,6 +81,12 @@ h1{
     flex-direction: column;
 }
 
+label {
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  
+}
 
 label:not(.areaUpload) {  
 
@@ -123,6 +131,7 @@ label:not(.areaUpload) {
     padding: 0.5em 0.5em;
     padding:1em;
     width: 100%;
+    height: 55px;
   }
   
   input:focus~label,
@@ -134,23 +143,19 @@ label:not(.areaUpload) {
       padding: 0 .3em;
       background:#F9F9F9;
       border: 1px solid #f9f9f9;
+      transition: none;
       
   }
 
-.botoes {
-    display: flex;
-    flex-direction: row;
-    width: 560px;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 20px;
-    justify-content: space-evenly;
+input:not(.areaUpload).input--preenchido{
+    transition: none;
 }
 
-.botaoCancelar .botaoCadastrar {
+span.botoes {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    margin: 40px auto;
+    justify-content: space-evenly;
+    padding: 20px;
 }
 
 .botaoCancelar{

@@ -5,14 +5,25 @@ async function criarGato() {
   const inputCatName = document.querySelector('#inputCatName').value;
   const inputOwnerName = document.querySelector('#inputOwnerName').value;
   const inputCatPhoto = document.querySelector('#inputCatPhoto').files[0];
-
+  const imagemPadrao = 'https://i.postimg.cc/ydxQRhj7/catImage.png'
   const url = 'https://644a8480a8370fb321510499.mockapi.io/api/v1/gatos';
 
   let base64 = '';
   if (inputCatPhoto) {
     console.log(inputCatPhoto)
     base64 = await getBase64(inputCatPhoto)
+  } else {
+    console.log(imagemPadrao)
+    base64 = await getBase64FromURL(imagemPadrao)
   }
+
+  async function getBase64FromURL(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const base64 = await getBase64(blob);
+    return base64;
+  }
+  
 
   const response = await fetch(url, {
     method: "POST",
@@ -74,16 +85,18 @@ document.addEventListener('DOMContentLoaded', function () {
   inputDono.addEventListener('input', validarInputs);
 });
 
-inputs = document.querySelectorAll('input');
 
-inputs.forEach(input => {
-  input.addEventListener('blur', function () {
-    if (this.type !== 'file') {
-      if (this.value) {
-        this.classList.add('input--preenchido');
-      } else {
-        this.classList.remove('input--preenchido');
+document.addEventListener('DOMContentLoaded', function() {
+  let inputs = document.querySelectorAll('input');
+  inputs.forEach(input => {
+    input.oninput = function () {
+      if (this.type !== 'file') {
+        if (this.value.trim() !== '') { 
+          this.classList.add('input--preenchido');
+        } else {
+          this.classList.remove('input--preenchido');
+        }
       }
-    }
+    };
   });
 });
