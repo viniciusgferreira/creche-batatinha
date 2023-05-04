@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset='utf-8'>
@@ -18,7 +18,7 @@
     <header class="cabecalhoPrincipal">
         <div class="container">
             <a class="logo" href="index.html">
-                <img class="logo-cabecalho" src="./assets/img/logo-cabecalho.svg" width="250px" height="80px">
+                <img class="logo-cabecalho" alt="Logo da Creche Batatinha" src="./assets/img/logo-cabecalho.svg" width="250px" height="80px">
             </a>
             <nav class="navegacaoLinks">
                 <a class="link-lista" href="listar-gatos.html">Ver lista de Miaus</a>
@@ -30,7 +30,7 @@
     </header>
     <main class="formularioCadastro">
         <div class="formulario">
-            <form class="caixa" onsubmit="criarGato(); return false">
+            <form class="caixa" id="formCadastro" onsubmit="criarGato(); return false">
                 <h1 class="tituloFormulario">Cadastro de um novo Miau</h1>
                 <div class="areaUpload" id="imagemGato">
                     <label for="inputCatPhoto" class="botaoUpload">
@@ -47,7 +47,7 @@
                     <label for="inputOwnerName">Nome da pessoa dona</label>
                 </span>
                 <span class="botoes">
-                    <a href="index.html"><button class="botaoCancelar" formnovalidate>Cancelar cadastro</button></a>
+                    <a href="index.html"><button class="botaoCancelar" type="button" formnovalidate>Cancelar cadastro</button></a>
                     <a href=""><button class="botaoCadastrar" id="botaoCadastro" type="submit">Salvar dados</button></a>
                 </span>
             </form>
