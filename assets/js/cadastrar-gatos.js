@@ -10,10 +10,8 @@ async function criarGato() {
 
   let base64 = '';
   if (inputCatPhoto) {
-    console.log(inputCatPhoto)
     base64 = await getBase64(inputCatPhoto)
   } else {
-    console.log(imagemPadrao)
     base64 = await getBase64FromURL(imagemPadrao)
   }
 
@@ -23,14 +21,21 @@ async function criarGato() {
     const base64 = await getBase64(blob);
     return base64;
   }
-  
+
 
   const response = await fetch(url, {
     method: "POST",
     body: JSON.stringify({
       nomeGato: inputCatName,
       nomeDono: inputOwnerName,
-      notaGato: 0,
+      notas: {
+        socializacao: 0,
+        sonequinha: 0,
+        alimentacao: 0,
+        brincadeiras: 0,
+        preguicinha: 0,
+        fotos: 0
+      },
       fotoGato: base64
     }),
     headers: {
@@ -86,12 +91,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   let inputs = document.querySelectorAll('input');
   inputs.forEach(input => {
     input.oninput = function () {
       if (this.type !== 'file') {
-        if (this.value.trim() !== '') { 
+        if (this.value.trim() !== '') {
           this.classList.add('input--preenchido');
         } else {
           this.classList.remove('input--preenchido');
