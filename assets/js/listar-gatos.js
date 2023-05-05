@@ -28,7 +28,7 @@ function createItem(catObject) {
     span.textContent = catObject.nomeGato
 
     const a = document.createElement('a')
-    a.href = 'lançar-notas.html'
+    a.href = `lancar-notas.html?id=${catObject.id}`
     a.innerText = 'Lançar notas'
     a.classList.add('link-lancar-notas')
 
