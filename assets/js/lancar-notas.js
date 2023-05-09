@@ -1,7 +1,5 @@
 'use strict'
 
-
-
 document.addEventListener('DOMContentLoaded', loadCat)
 
 function getParamID() {
@@ -38,112 +36,97 @@ function renderDate() {
   dataElemento.textContent = month.charAt(0).toUpperCase() + month.slice(1) + '/' + year;
 }
 
-/*
-document.addEventListener('DOMContentLoaded', function () {
-    let elementos = [
-      document.getElementById('socializacao'),
-      document.getElementById('sonequinha'),
-      document.getElementById('alimentacao'),
-      document.getElementById('brincadeiras'),
-      document.getElementById('preguicinha'),
-      document.getElementById('fotos')
-    ];
-  
-    let botao = document.getElementById('botaoSalvarNotas');
-    botao.disabled = true;
-  
-    function validarInputs() {
-      let temNota = false;
-      for (const category in cat.notas) {
-        if (filledPawCounter >= 1){
-            temNota = true;
-            break;
-        }
-      }
-      if (temNota) {
-        botao.classList.remove('botaoSalvar--desabilitado');
-        botao.disabled = false;
-      } else {
-        botao.classList.add('botaoSalvar--desabilitado');
-        botao.disabled = true;
-      }
-    }
-  
-    for (let i = 0; i < elementos.length; i++) {
-      elementos[i].addEventListener('input', validarInputs);
-    }
-  });
-  */
-let notaAtual = 0;
-
 function renderCat(cat) {
+  // desabilitar botao de salvar
+  document.getElementById('botaoSalvarNotas').disabled = true;
+
   const catNameEl = document.querySelector('#nomeGato')
   const catPhotoEl = document.querySelector('#fotoGato')
 
   catNameEl.textContent = cat.nomeGato
   catPhotoEl.src = cat.fotoGato
 
+  let notaAtual = 0;
   for (const category in cat.notas) {
     const div = document.querySelector(`#${category}`);
     let filledPawCounter = 0;
     notaAtual = cat.notas[category];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i <= 5; i++) {
       if (filledPawCounter < cat.notas[category]) {
-        div.appendChild(createFilledPaw());
+        div.appendChild(createFilledPaw(`${category}${i}`));
         filledPawCounter++;
       } else {
-        div.appendChild(createEmptyPaw())
+        div.appendChild(createEmptyPaw(`${category}${i}`))
       }
     }
   }
 }
 
-function createFilledPaw() {
+function createFilledPaw(id) {
   const filledPaw = document.createElement('img')
+  filledPaw.id = id;
   filledPaw.src = 'https://i.postimg.cc/hX9g5d5g/patinha.png'
   filledPaw.classList.add('iconePata--preenchida', 'iconePata')
   filledPaw.addEventListener('click', function () {
+    document.getElementById('botaoSalvarNotas').disabled = false;
     mudarPatinha(filledPaw)
   });
   return filledPaw;
 }
 
-function createEmptyPaw() {
+function createEmptyPaw(id) {
   const emptyPaw = document.createElement('img')
+  emptyPaw.id = id;
   emptyPaw.src = 'https://i.postimg.cc/G40dKQzq/patinha-1.png'
   emptyPaw.classList.add('iconePata');
 
   emptyPaw.addEventListener('click', function () {
+    document.getElementById('botaoSalvarNotas').disabled = false;
     mudarPatinha(emptyPaw);
   });
   return emptyPaw
 }
 
 function mudarPatinha(paw) {
+  const pawCategory = paw.id.substring(0, paw.id.length - 1)
+  const pawPosition = paw.id.slice(paw.id.length - 1)
   if (paw.src.endsWith('patinha-1.png')) {
-    paw.src = 'https://i.postimg.cc/hX9g5d5g/patinha.png';
-    filledPawCounter++;
-    updateCat(cat);
-
     // aumentar nota
-  } else if (paw.src.endsWith('patinha.png')) {
-    paw.src = 'https://i.postimg.cc/G40dKQzq/patinha-1.png';
-    filledPawCounter--;
-    updateCat(cat);
-    // diminuir nota
-  }
+    for (let i = 1; i <= pawPosition; i++) {
+      const element = document.querySelector(`#${pawCategory}${i}`)
+      element.src = 'https://i.postimg.cc/hX9g5d5g/patinha.png';
+      element.classList.add('iconePata--preenchida')
+    }
 
+  } else if (paw.src.endsWith('patinha.png')) {
+    // diminuir nota
+    for (let i = 5; i > pawPosition; i--) {
+      const element = document.querySelector(`#${pawCategory}${i}`)
+      element.src = 'https://i.postimg.cc/G40dKQzq/patinha-1.png';
+      element.classList.remove('iconePata--preenchida')
+    }
+  }
 }
 
 async function submitForm() {
   const catID = getParamID();
-  const cat = await fetchCatByID(catID);
+  const cat = {
+    "id": catID,
+    "notas": {
+      "socializacao": 0,
+      "sonequinha": 0,
+      "alimentacao": 0,
+      "brincadeiras": 0,
+      "preguicinha": 0,
+      "fotos": 0
+    }
+  }
+
   for (const category in cat.notas) {
     const div = document.querySelector(`#${category}`);
     const filledPaws = div.querySelectorAll('.iconePata--preenchida');
     cat.notas[category] = filledPaws.length;
   }
-
   await updateCat(cat);
 }
 
