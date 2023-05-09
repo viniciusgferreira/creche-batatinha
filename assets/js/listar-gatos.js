@@ -2,9 +2,13 @@
 
 document.addEventListener('DOMContentLoaded', loadCats)
 
-async function loadCats() {
-    const catList = await fetchCats()
+// Call api before DOM loaded event
+let catsData = fetchCats()
 
+async function loadCats() {
+    const catList = await catsData
+
+    // Create all cats elements
     for (let i = 0; i < catList.length; i++) {
         createItem(catList[i])
     }
