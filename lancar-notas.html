@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel='stylesheet' href='./assets/css/style.css'>
     <link rel="stylesheet" href="./assets/css/lancar-notas.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
-    <script src="./assets/js/lancar-notas.js"></script>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap">
 
 <body>
     <header class="cabecalhoPrincipal">
@@ -31,78 +30,80 @@
     </header>
 
     <main class="lançarNotas">
-        <form class="caixa" id="formNotas" onsubmit="lancarNotas(); return false">
-            <div class="cabeçalhoLançarNotas">
-                <a href="./listar-gatos.html">Voltar</a>
-                <div class="dadosGato">
-                    <img id="fotoGato" width="50px" height="50px">
-                    <h1 id="nomeGato"></h1>
+        <div class="formularioNotas">
+            <form class="caixa" id="formNotas" onsubmit="lancarNotas(); return false">
+                <div class="cabeçalhoLançarNotas">
+                    <a href="./listar-gatos.html"><img src="./assets/img/botao_voltar.svg"></a>
+                    <div class="dadosGato">
+                        <img id="fotoGato" width="50px" height="50px">
+                        <h1 id="nomeGato"></h1>
+                    </div>
+                    <span id="data"></span>
                 </div>
-                <span id="data"></span>
-            </div>
 
-            <ul>
-                <li class="itemLançarNotas">
-                    <div>
-                        <h2>Socialização</h2>
-                        <span>Brinca com outros gatinhos?</span>
-                    </div>
-                    <div class="patas" id="socializacao">
-                    </div>
-                </li>
+                <ul>
+                    <li class="primeiroItemLancarNotas">
+                        <div>
+                            <h2>Socialização</h2>
+                            <span class="frase">Brinca com outros gatinhos?</span>
+                        </div>
+                        <div class="patas" id="socializacao">
+                        </div>
+                    </li>
 
-                <li class="itemLançarNotas">
-                    <div>
-                        <h2>Sonequinha</h2>
-                        <span>Tira bastante soninho?</span>
-                    </div>
-                    <div class="patas" id="sonequinha">
-                    </div>
-                </li>
+                    <li class="itemLançarNotas">
+                        <div>
+                            <h2>Sonequinha</h2>
+                            <span class="frase">Tira bastante soninho?</span>
+                        </div>
+                        <div class="patas" id="sonequinha">
+                        </div>
+                    </li>
 
-                <li class="itemLançarNotas">
-                    <div>
-                        <h2>Alimentação</h2>
-                        <span>Está comendo direitinho?</span>
-                    </div>
-                    <div class="patas" id="alimentacao">
-                    </div>
-                </li>
+                    <li class="itemLançarNotas">
+                        <div>
+                            <h2>Alimentação</h2>
+                            <span class="frase">Está comendo direitinho?</span>
+                        </div>
+                        <div class="patas" id="alimentacao">
+                        </div>
+                    </li>
 
-                <li class="itemLançarNotas">
-                    <div>
-                        <h2>Brincadeiras</h2>
-                        <span>Participa das brincadeiras em grupo?</span>
-                    </div>
-                    <div class="patas" id="brincadeiras">
-                    </div>
-                </li>
+                    <li class="itemLançarNotas">
+                        <div>
+                            <h2>Brincadeiras</h2>
+                            <span class="frase">Participa das brincadeiras em grupo?</span>
+                        </div>
+                        <div class="patas" id="brincadeiras">
+                        </div>
+                    </li>
 
-                <li class="itemLançarNotas">
-                    <div>
-                        <h2>Preguicinha</h2>
-                        <span>Está mais agitado ou mais quietinho?</span>
-                    </div>
-                    <div class="patas" id="preguicinha">
-                    </div>
-                </li>
+                    <li class="itemLançarNotas">
+                        <div>
+                            <h2>Preguicinha</h2>
+                            <span class="frase">Está mais agitado ou mais quietinho?</span>
+                        </div>
+                        <div class="patas" id="preguicinha">
+                        </div>
+                    </li>
 
-                <li class="itemLançarNotas">
-                    <div>
-                        <h2>Fotos</h2>
-                        <span>Deixa as titias tirarem fotos?</span>
-                    </div>
-                    <div class="patas" id="fotos">
-                    </div>
-                </li>
-            </ul>
-
+                    <li class="itemLançarNotas">
+                        <div>
+                            <h2>Fotos</h2>
+                            <span class="frase">Deixa as titias tirarem fotos?</span>
+                        </div>
+                        <div class="patas" id="fotos">
+                        </div>
+                    </li>
+                </ul>
+            </form>
             <span class="botoes">
-                <a href="listar-gatos.html"><button class="botaoImprimir" type="button" formnovalidate>Imprimir boletim</button></a>
-                <a href=""><button class="botaoSalvar" id="botaoCadastro" type="submit">Salvar notas</button></a>
+                <button class="botaoImprimir" type="button" formnovalidate>Imprimir boletim</button>
+                <button class="botaoSalvar" id="botaoSalvarNotas" type="submit">Salvar notas</button>
             </span>
-        </form>
+            </div>
     </main>
+    <script src="./assets/js/lancar-notas.js"></script>
 </body>
 
 </html>

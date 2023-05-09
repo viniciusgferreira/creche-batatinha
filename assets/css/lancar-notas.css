@@ -1,12 +1,14 @@
-.caixa {
+.formularioNotas{
     display: flex;
+    flex-direction: column;
+    margin: 0 auto;
     width: 600px;
-    height: fit-content;
-    background-color: #fff;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
-    margin: 60px auto;
+    margin: 20px auto;
+    background-color: #fff;
     border: 1px solid #fff;
     border-radius: 6px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -21,10 +23,48 @@
     z-index: 0;
 }
 
+#nomeGato {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+#data {
+    font-size: 20px;
+    font-weight: 700;
+    color: #5a5a5a;
+}
+
+.primeiroItemLancarNotas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #dad9d9;
+    border-bottom: 1px solid #dad9d9;
+    padding: 10px 0;
+}
+
+.primeiroItemLancarNotas div h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.itemLançarNotas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dad9d9;
+    padding: 10px 0;
+}
+
+.itemLançarNotas div h2{
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
 .dadosGato {
     display: flex;
     align-items: center;
-
 }
 
 .dadosGato h1 {
@@ -32,24 +72,23 @@
     text-align: center;
 }
 
+.frase {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
 .iconeGato {
     font-size: 28px;
     width: 30px;
     height: 30px;
 }
-
 .iconePata {
     width: 30px;
     height: 30px;
 }
 
 .cabeçalhoLançarNotas {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.itemLançarNotas {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +101,8 @@
 
 span.botoes {
     display: flex;
-    margin: 40px auto;
+    flex-direction: row;
+    margin: 0;
     justify-content: space-evenly;
     padding: 20px;
 }
