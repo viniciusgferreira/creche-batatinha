@@ -68,8 +68,9 @@ function createFilledPaw(id) {
   filledPaw.src = 'https://i.postimg.cc/hX9g5d5g/patinha.png'
   filledPaw.classList.add('iconePata--preenchida', 'iconePata')
   filledPaw.addEventListener('click', function () {
-    document.getElementById('botaoSalvarNotas').disabled = false;
+    //document.getElementById('botaoSalvarNotas').disabled = false;
     mudarPatinha(filledPaw)
+    checkRequiredInputs()
   });
   return filledPaw;
 }
@@ -81,8 +82,9 @@ function createEmptyPaw(id) {
   emptyPaw.classList.add('iconePata');
 
   emptyPaw.addEventListener('click', function () {
-    document.getElementById('botaoSalvarNotas').disabled = false;
+    //document.getElementById('botaoSalvarNotas').disabled = false;
     mudarPatinha(emptyPaw);
+    checkRequiredInputs()
   });
   return emptyPaw
 }
@@ -106,6 +108,19 @@ function mudarPatinha(paw) {
       element.classList.remove('iconePata--preenchida')
     }
   }
+}
+
+function checkRequiredInputs() {
+  const firstPaws = document.querySelectorAll('.iconePata')
+  let inputs = true;
+  for (let i = 0; i <= 25; i += 5) {
+    if (!firstPaws[i].classList.contains('iconePata--preenchida')) {
+      inputs = false
+      break;
+    }
+  }
+  // enable button
+  if (inputs) { document.getElementById('botaoSalvarNotas').disabled = false; }
 }
 
 async function submitForm() {
