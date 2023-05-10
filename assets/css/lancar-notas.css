@@ -139,4 +139,12 @@ span.botoes {
     text-decoration: none;
     border: 2px solid #EB339B;
     border-radius: 4px;
+    cursor: pointer;
+}
+
+.botaoImprimir:disabled {
+    cursor: not-allowed;
+    border: 2.5px solid #9f9f9f;
+    color: white;
+    background-color: #9f9f9f;
 }

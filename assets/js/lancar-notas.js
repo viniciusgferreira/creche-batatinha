@@ -11,10 +11,14 @@ function getParamID() {
 }
 
 async function loadCat() {
+  // renderizar dados do gato
   const catID = getParamID()
   const cat = await fetchCatByID(catID)
   renderDate()
   renderCat(cat)
+
+  // habilitar botão 'imprimir' se campos estão preenchidos
+  checkRequiredInputs() ? enableButton(document.querySelector('#botaoImprimirNotas')) : null;
 }
 
 async function fetchCatByID(id) {
@@ -37,9 +41,6 @@ function renderDate() {
 }
 
 function renderCat(cat) {
-  // desabilitar botao de salvar
-  document.getElementById('botaoSalvarNotas').disabled = true;
-
   const catNameEl = document.querySelector('#nomeGato')
   const catPhotoEl = document.querySelector('#fotoGato')
 
@@ -68,9 +69,8 @@ function createFilledPaw(id) {
   filledPaw.src = 'https://i.postimg.cc/hX9g5d5g/patinha.png'
   filledPaw.classList.add('iconePata--preenchida', 'iconePata')
   filledPaw.addEventListener('click', function () {
-    //document.getElementById('botaoSalvarNotas').disabled = false;
     mudarPatinha(filledPaw)
-    checkRequiredInputs()
+    if (checkRequiredInputs()) { enableButtons() }
   });
   return filledPaw;
 }
@@ -82,9 +82,8 @@ function createEmptyPaw(id) {
   emptyPaw.classList.add('iconePata');
 
   emptyPaw.addEventListener('click', function () {
-    //document.getElementById('botaoSalvarNotas').disabled = false;
     mudarPatinha(emptyPaw);
-    checkRequiredInputs()
+    if (checkRequiredInputs()) { enableButtons() }
   });
   return emptyPaw
 }
@@ -119,8 +118,24 @@ function checkRequiredInputs() {
       break;
     }
   }
-  // enable button
-  if (inputs) { document.getElementById('botaoSalvarNotas').disabled = false; }
+  return inputs
+}
+
+function enableButton(button) {
+  button.disabled = false;
+}
+
+function disableButton(button) {
+  button.disabled = true;
+}
+
+function enableButtons() {
+  enableButton(document.querySelector('#botaoSalvarNotas'))
+  enableButton(document.querySelector('#botaoImprimirNotas'))
+}
+
+function printCatData() {
+  console.log('printing')
 }
 
 async function submitForm() {
