@@ -72,6 +72,10 @@
 .dadosGato h1 {
     font-size: 2em;
     text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 200px;
+
 }
 
 .frase {
@@ -139,4 +143,82 @@ span.botoes {
     text-decoration: none;
     border: 2px solid #EB339B;
     border-radius: 4px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .formularioNotas{
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        }
+    
+    .primeiroItemLancarNotas, .itemLançarNotas{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        }
+
+    .formularioNotas h2, .frase {
+        text-align: center;
+        justify-content: center;
+    }
+
+    div .patas{
+        display: inline-block;
+        flex-direction: row;
+    }
+
+        
+    .gatoItemLista{
+    
+        flex-direction: column;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 100%;
+        
+    }
+    
+    .gatoItemLista div {
+        flex-direction: column;
+        align-items: flex-start;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+    
+    .gatoItemLista div img{
+        margin: 20px auto;
+        width: 70px;
+        height: 70px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    span.botoes {
+        display: flex;
+        height: fit-content;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .botaoSalvar, .botaoSalvar--desabilitado {
+        margin-top: 15px;
+        width: 260px;
+        height: 40px;
+    }
+
+    .botaoImprimir {
+        margin-top: 15px;
+        width: 260px;
+        height: 40px;
+    
+    }
 }
