@@ -135,7 +135,15 @@ function enableButtons() {
 }
 
 function printCatData() {
-  console.log('printing')
+  let displaData = new Map()
+  const header = document.querySelector('header')
+  const navButton = document.querySelector('#botaoVoltar')
+  const buttons = document.querySelector('.botoes')
+  displaData.set(header, header.style.display).set(navButton, navButton.style.display).set(buttons, buttons.style.display)
+
+  displaData.forEach((value, key) => key.style.display = 'none')
+  window.print()
+  displaData.forEach((value, key) => key.style.display = value)
 }
 
 async function submitForm() {
