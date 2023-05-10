@@ -11,10 +11,14 @@ function getParamID() {
 }
 
 async function loadCat() {
+  // renderizar dados do gato
   const catID = getParamID()
   const cat = await fetchCatByID(catID)
   renderDate()
   renderCat(cat)
+
+  // habilitar botão 'imprimir' se campos estão preenchidos
+  checkRequiredInputs() ? enableButton(document.querySelector('#botaoImprimirNotas')) : null;
 }
 
 async function fetchCatByID(id) {
@@ -37,9 +41,6 @@ function renderDate() {
 }
 
 function renderCat(cat) {
-  // desabilitar botao de salvar
-  document.getElementById('botaoSalvarNotas').disabled = true;
-
   const catNameEl = document.querySelector('#nomeGato')
   const catPhotoEl = document.querySelector('#fotoGato')
 
@@ -68,8 +69,8 @@ function createFilledPaw(id) {
   filledPaw.src = 'https://i.postimg.cc/hX9g5d5g/patinha.png'
   filledPaw.classList.add('iconePata--preenchida', 'iconePata')
   filledPaw.addEventListener('click', function () {
-    document.getElementById('botaoSalvarNotas').disabled = false;
     mudarPatinha(filledPaw)
+    if (checkRequiredInputs()) { enableButtons() }
   });
   return filledPaw;
 }
@@ -81,8 +82,8 @@ function createEmptyPaw(id) {
   emptyPaw.classList.add('iconePata');
 
   emptyPaw.addEventListener('click', function () {
-    document.getElementById('botaoSalvarNotas').disabled = false;
     mudarPatinha(emptyPaw);
+    if (checkRequiredInputs()) { enableButtons() }
   });
   return emptyPaw
 }
@@ -106,6 +107,43 @@ function mudarPatinha(paw) {
       element.classList.remove('iconePata--preenchida')
     }
   }
+}
+
+function checkRequiredInputs() {
+  const firstPaws = document.querySelectorAll('.iconePata')
+  let inputs = true;
+  for (let i = 0; i <= 25; i += 5) {
+    if (!firstPaws[i].classList.contains('iconePata--preenchida')) {
+      inputs = false
+      break;
+    }
+  }
+  return inputs
+}
+
+function enableButton(button) {
+  button.disabled = false;
+}
+
+function disableButton(button) {
+  button.disabled = true;
+}
+
+function enableButtons() {
+  enableButton(document.querySelector('#botaoSalvarNotas'))
+  enableButton(document.querySelector('#botaoImprimirNotas'))
+}
+
+function printCatData() {
+  let displaData = new Map()
+  const header = document.querySelector('header')
+  const navButton = document.querySelector('#botaoVoltar')
+  const buttons = document.querySelector('.botoes')
+  displaData.set(header, header.style.display).set(navButton, navButton.style.display).set(buttons, buttons.style.display)
+
+  displaData.forEach((value, key) => key.style.display = 'none')
+  window.print()
+  displaData.forEach((value, key) => key.style.display = value)
 }
 
 async function submitForm() {

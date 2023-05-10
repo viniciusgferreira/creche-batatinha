@@ -33,7 +33,7 @@
         <div class="formularioNotas">
             <form class="caixa" id="formNotas" onsubmit="lancarNotas(); return false">
                 <div class="cabeçalhoLançarNotas">
-                    <a href="./listar-gatos.html"><img src="./assets/img/botao_voltar.svg"></a>
+                    <a id="botaoVoltar" href="./listar-gatos.html"><img src="./assets/img/botao_voltar.svg"></a>
                     <div class="dadosGato">
                         <img id="fotoGato" width="50px" height="50px">
                         <h1 id="nomeGato"></h1>
@@ -98,10 +98,10 @@
                 </ul>
             </form>
             <span class="botoes">
-                <button class="botaoImprimir" type="button" formnovalidate>Imprimir boletim</button>
-                <button class="botaoSalvar" id="botaoSalvarNotas" type="submit">Salvar notas</button>
+                <button class="botaoImprimir" id="botaoImprimirNotas" type="button" disabled formnovalidate onclick="printCatData()">Imprimir boletim</button>
+                <button class="botaoSalvar" id="botaoSalvarNotas" type="submit" disabled>Salvar notas</button>
             </span>
-            </div>
+        </div>
     </main>
     <script src="./assets/js/lancar-notas.js"></script>
 </body>

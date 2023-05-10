@@ -1,3 +1,7 @@
+html {
+    scrollbar-gutter: stable
+}
+
 body {
     background-color: #f2f2f2;
 }
@@ -144,7 +148,7 @@ h2 {
     .textos {
         max-width: 84%;
         margin: 0 16%;
-        }
+    }
 
     .texto-saudacao {
         margin: 0 auto;
