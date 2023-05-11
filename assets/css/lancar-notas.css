@@ -142,6 +142,7 @@ span.botoes {
     text-decoration: none;
     border: 2px solid #EB339B;
     border-radius: 4px;
+    cursor: pointer;
 
 }
 
@@ -167,27 +168,34 @@ span.botoes {
 }
 @media screen and (max-width: 768px) {
 
-    .formularioNotas{
+    .formularioNotas {
         display: flex;
         flex-direction: column;
         width: 80%;
-        }
-    
-    .primeiroItemLancarNotas, .itemLançarNotas{
+    }
+
+    .primeiroItemLancarNotas,
+    .itemLançarNotas {
         display: flex;
         flex-direction: column;
         width: 100%;
         align-items: center;
         justify-content: center;
-        }
-
+    }
+  
     #nomeGato{
         font-size: 24px;
         width: fit-content;
         max-width: 95px;
     }
+  
+    #botaoVoltar img {
+        width: 75%;
+    }
 
-    img#fotoGato, #nomeGato, #data {
+    img#fotoGato,
+    #nomeGato,
+    #data {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -195,26 +203,28 @@ span.botoes {
         justify-content: space-between;
         padding-left: .5%;
     }
-    .formularioNotas h2, .frase {
+
+    .formularioNotas h2,
+    .frase {
         text-align: center;
         justify-content: center;
     }
 
-    div .patas{
+    div .patas {
         display: inline-block;
         flex-direction: row;
     }
 
-        
-    .gatoItemLista{
-    
+
+    .gatoItemLista {
+
         flex-direction: column;
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 100%;
-        
+
     }
-    
+
     .gatoItemLista div {
         flex-direction: column;
         align-items: flex-start;
@@ -225,8 +235,8 @@ span.botoes {
         align-items: center;
         padding: 10px 0;
     }
-    
-    .gatoItemLista div img{
+
+    .gatoItemLista div img {
         margin: 20px auto;
         width: 70px;
         height: 70px;
@@ -242,7 +252,8 @@ span.botoes {
         justify-content: center;
     }
 
-    .botaoSalvar, .botaoSalvar--desabilitado {
+    .botaoSalvar,
+    .botaoSalvar--desabilitado {
         margin-top: 15px;
         width: 100%;
         text-align: center;
@@ -257,14 +268,14 @@ span.botoes {
         text-align: center;
         height: 40px;
         cursor: pointer;
-}
+    }
 
-.botaoImprimir:disabled {
-    cursor: not-allowed;
-    border: 2.5px solid #9f9f9f;
-    color: white;
-    width: 100%;
-    text-align: center;
-    background-color: #9f9f9f;
-}
+    .botaoImprimir:disabled {
+        cursor: not-allowed;
+        border: 2.5px solid #9f9f9f;
+        color: white;
+        width: 100%;
+        text-align: center;
+        background-color: #9f9f9f;
+    }
 }
