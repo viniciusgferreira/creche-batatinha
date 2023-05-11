@@ -134,24 +134,6 @@ function enableButtons() {
   enableButton(document.querySelector('#botaoImprimirNotas'))
 }
 
-function printCatData() {
-
-  let displaData = new Map()
-  const header = document.querySelector('header')
-  const navButton = document.querySelector('#botaoVoltar')
-  const buttons = document.querySelector('.botoes')
-  displaData.set(header, header.style.display).set(navButton, navButton.style.display).set(buttons, buttons.style.display)
-
-  displaData.forEach((value, key) => key.style.display = 'none')
-
-  window.addEventListener("afterprint", (event) => {
-    displaData.forEach((value, key) => key.style.display = value)
-  });
-
-  window.print()
-
-}
-
 async function submitForm() {
   const catID = getParamID();
   const cat = {

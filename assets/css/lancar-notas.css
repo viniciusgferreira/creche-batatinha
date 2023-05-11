@@ -1,3 +1,17 @@
+@media print {
+
+    header,
+    #botaoVoltar,
+    .botoes,
+    #non-printable {
+        display: none !important;
+    }
+
+    #printable {
+        display: block;
+    }
+}
+
 .formularioNotas {
     display: flex;
     width: 600px;
