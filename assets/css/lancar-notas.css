@@ -154,7 +154,18 @@ span.botoes {
     background-color: #9f9f9f;
 }
 
+@media screen and (max-width: 290px) {
 
+    .botaoVoltar{
+        width: 2%;
+    }
+    
+    #nomeGato, #data{
+        font-size: 12px;
+        max-width: 5px;
+    }
+    
+}
 @media screen and (max-width: 768px) {
 
     .formularioNotas {
@@ -171,7 +182,13 @@ span.botoes {
         align-items: center;
         justify-content: center;
     }
-
+  
+    #nomeGato{
+        font-size: 24px;
+        width: fit-content;
+        max-width: 95px;
+    }
+  
     #botaoVoltar img {
         width: 75%;
     }
@@ -182,7 +199,7 @@ span.botoes {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        max-width: 80%;
+        width: fit-content;
         justify-content: space-between;
         padding-left: .5%;
     }
