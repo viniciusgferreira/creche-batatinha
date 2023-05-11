@@ -7,6 +7,8 @@
     border-radius: 6px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     padding: 16px 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .link-lancar-notas {
@@ -23,6 +25,8 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .imagemGato {
@@ -33,6 +37,8 @@
     font-weight: bold;
     font-size: 18px;
     margin-left: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .caixa {
@@ -55,7 +61,13 @@
     flex-flow: column;
     gap: 20px;
     font-family: 'Roboto', sans-serif;
+    text-overflow: ellipsis;
 
+}
+
+.gatoItemLista div span {
+    text-overflow: ellipsis;
+    max-width: 200px;
 }
 
 .tituloListaGatos {
@@ -64,7 +76,7 @@
     text-align: center;
     margin: 20px 0;
 }
-
+/*
 @media screen and (max-width: 700px) {
     .caixa {
         width: 80%;
@@ -75,10 +87,38 @@
     }
 
 }
+*/
+@media screen and (max-width: 768px) {
 
-@media screen and (max-width: 360px) {
-    .gatoItemLista {
-        flex-direction: column;
+.caixa {
+    width: 80%;
     }
+    
+.gatoItemLista{
+
+    flex-direction: column;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
+    
+}
+
+.gatoItemLista div {
+    flex-direction: column;
+    align-items: flex-start;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.gatoItemLista div img{
+    margin: 20px auto;
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+}
 
 }
