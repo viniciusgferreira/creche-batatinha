@@ -146,11 +146,8 @@ function printCatData() {
 
   window.addEventListener("afterprint", (event) => {
     displaData.forEach((value, key) => key.style.display = value)
-    console.log(header.style.display)
-    console.log('fim')
   });
 
-  console.log(header.style.display)
   window.print()
 
 }
