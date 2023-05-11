@@ -156,16 +156,14 @@ span.botoes {
 
 @media screen and (max-width: 290px) {
 
-    .botaoVoltar{
-        width: 2%;
-    }
-    
-    #nomeGato, #data{
+    #nomeGato,
+    #data {
         font-size: 12px;
         max-width: 5px;
     }
-    
+
 }
+
 @media screen and (max-width: 768px) {
 
     .formularioNotas {
@@ -182,13 +180,13 @@ span.botoes {
         align-items: center;
         justify-content: center;
     }
-  
-    #nomeGato{
+
+    #nomeGato {
         font-size: 24px;
         width: fit-content;
         max-width: 95px;
     }
-  
+
     #botaoVoltar img {
         width: 75%;
     }
@@ -245,7 +243,6 @@ span.botoes {
     }
 
     span.botoes {
-        display: flex;
         height: fit-content;
         flex-direction: column;
         align-items: center;
