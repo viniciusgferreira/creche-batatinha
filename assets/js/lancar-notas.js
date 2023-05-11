@@ -135,6 +135,7 @@ function enableButtons() {
 }
 
 function printCatData() {
+
   let displaData = new Map()
   const header = document.querySelector('header')
   const navButton = document.querySelector('#botaoVoltar')
@@ -142,8 +143,13 @@ function printCatData() {
   displaData.set(header, header.style.display).set(navButton, navButton.style.display).set(buttons, buttons.style.display)
 
   displaData.forEach((value, key) => key.style.display = 'none')
+
+  window.addEventListener("afterprint", (event) => {
+    displaData.forEach((value, key) => key.style.display = value)
+  });
+
   window.print()
-  displaData.forEach((value, key) => key.style.display = value)
+
 }
 
 async function submitForm() {
