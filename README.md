@@ -8,5 +8,5 @@
 
 ## Deploy
 Você pode ver o website em produção aqui 
-## -> [Creche Batatinha](https://chrixtianny.github.io/creche-batatinha/)  
-###### Construção realizada junto ao Vinicius Ferreira
+## -> [Creche Batatinha](https://viniciusgferreira.github.io/creche-batatinha/)  
+###### Construção realizada por Christianny e Vinicius Ferreira
