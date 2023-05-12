@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    <script src="./assets/js/cadastrar-gatos.js"></script>
     <header class="cabecalhoPrincipal">
         <div class="container">
             <a class="logo" href="index.html">
@@ -29,6 +28,7 @@
         </div>
     </header>
     <main class="formularioCadastro">
+        <div class="notification-box"><span class="close-button"></span></div>
         <div class="formulario">
             <form class="caixa" id="formCadastro" onsubmit="criarGato(); return false">
                 <h1 class="tituloFormulario">Cadastro de um novo Miau</h1>
@@ -37,6 +37,7 @@
                         <p class="textoUpload">+ Clique para adicionar foto</p>
                     </label>
                     <input type="file" name="" id="inputCatPhoto" class="imagemPerfil" accept="image/jpeg, image/png, image/jpg" hidden />
+                    <img id="previewImage" src="#" alt="">
                 </div>
                 <div class="inputsNome">
                     <span class="inputs">
@@ -57,5 +58,5 @@
         </div>
 
     </main>
-
+    <script src="./assets/js/cadastrar-gatos.js"></script>
 </body>

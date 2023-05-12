@@ -134,6 +134,60 @@ function enableButtons() {
   enableButton(document.querySelector('#botaoImprimirNotas'))
 }
 
+
+function sendNotification(type, text, duration = 25000) {
+  const notificationBox = document.querySelector(".notification-box");
+
+  const alerts = {
+    success: {
+      icon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_1021_117)">
+      <path d="M5.99984 13.3333H11.9998C12.5532 13.3333 13.0265 13 13.2265 12.52L15.2398 7.82C15.2998 7.66667 15.3332 7.50667 15.3332 7.33333V6C15.3332 5.26667 14.7332 4.66667 13.9998 4.66667H9.79317L10.4265 1.62L10.4465 1.40667C10.4465 1.13333 10.3332 0.88 10.1532 0.7L9.4465 0L5.05317 4.39333C4.81317 4.63333 4.6665 4.96667 4.6665 5.33333V12C4.6665 12.7333 5.2665 13.3333 5.99984 13.3333ZM5.99984 5.33333L8.89317 2.44L7.99984 6H13.9998V7.33333L11.9998 12H5.99984V5.33333ZM0.666504 5.33333H3.33317V13.3333H0.666504V5.33333Z" fill="white"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_1021_117">
+      <rect width="16" height="16" fill="white"/>
+      </clipPath>
+      </defs>
+      </svg>`,
+      color: "success"
+    }
+  };
+
+
+  const component = document.createElement("div");
+  component.className = `notification ${alerts[type].color}`;
+  component.innerHTML = `
+    ${alerts[type].icon}
+    <p>${text}</p>
+    <button class="close-button" type="button" aria-label="Close">&times;</button>
+  `;
+  notificationBox.appendChild(component);
+
+  const closeNotification = () => {
+    component.style.opacity = "0";
+    component.style.transform = "translateY(-100%)";
+    component.addEventListener("transitionend", () => {
+      notificationBox.removeChild(component);
+    }, { once: true });
+  };
+
+  let timeoutID = setTimeout(closeNotification, duration);
+
+  const closeButton = component.querySelector(".close-button");
+  if (closeButton) {
+    closeButton.addEventListener("click", () => {
+      clearTimeout(timeoutID);
+      closeNotification();
+    });
+  }
+
+  // Mostrar a notificação
+  component.style.opacity = "1";
+  component.style.transform = "translateY(0)";
+}
+
+
 async function submitForm() {
   const catID = getParamID();
   const cat = {
@@ -168,6 +222,16 @@ async function updateCat(cat) {
   try {
     const response = await fetch(url, options);
     const updatedCat = await response.json();
+
+    const responseCode = response.status;
+
+    if (response.ok) {
+      if (responseCode === 200) {
+        sendNotification("success", "Dados salvos com sucesso!");
+    } else {
+      console.log(response.statusText)
+    }}
+    
     console.log(updatedCat);
     console.log(response.status);
   } catch (error) {
