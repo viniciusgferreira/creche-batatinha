@@ -104,6 +104,9 @@
     font-weight: 700;
 }
 
+#fotoGato {
+    border-radius: 50%;
+}
 #data {
     font-size: 20px;
     font-weight: 700;
