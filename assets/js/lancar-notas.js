@@ -227,7 +227,7 @@ async function updateCat(cat) {
 
     if (response.ok) {
       if (responseCode === 200) {
-        sendNotification("success", "Dados salvos com sucesso!");
+        sendNotification("success", "Notas salvas com sucesso!");
     } else {
       console.log(response.statusText)
     }}
