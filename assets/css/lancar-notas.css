@@ -21,6 +21,7 @@
     z-index: 1;
     font-weight: 400;
     font-family: Roboto, sans-serif;
+    font-size: 12px;
   }
   
   .notification {
@@ -75,6 +76,7 @@
     width: 40px;
     height: 40px;
   }
+  
   
 .formularioNotas {
     display: flex;

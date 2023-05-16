@@ -1,3 +1,69 @@
+.notification-box {
+    margin-top: 15px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    z-index: 1;
+    font-weight: 400;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+  }
+  
+  .notification {
+    display: flex;
+    align-items: center;
+    background-color: #0DAB01;
+    background-image: linear-gradient(to right, #8cff8c, #006400);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 3px;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 272px;
+    height: 20px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .notification.success {
+    background-color: #0DAB01;
+  }
+  
+  .notification svg {
+    width: 30px;
+    height: 20px;
+    margin-right: 1px;
+  }
+
+  .notification p, svg {
+    margin: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  button.close-button{
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }
+  
+
 .gatoItemLista {
     display: flex;
     justify-content: space-between;
@@ -49,7 +115,7 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
-    margin: 60px auto;
+    margin: 15px auto;
     border: 1px solid #fff;
     border-radius: 6px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
