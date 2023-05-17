@@ -242,15 +242,64 @@ span.botoes {
 
 @media screen and (max-width: 290px) {
 
-    #nomeGato,
-    #data {
+    .navegacaoLinks {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        max-width: min-content;
+    }
+
+    .link-lista, .link-cadastro .botao-cadastro {
+        font-size: 14px;
+        text-align: center;
+        width: 200px;
+        padding: 10px 0;
+    }
+    #nomeGato, #data {
         font-size: 12px;
-        max-width: 5px;
+        width: fit-content;
+        max-width: min-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #botaoVoltar img {
+        width: 75%;
+    }
+
+    img#fotoGato {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 40px;
+        height: 40px;
+        justify-content: space-between;
+        padding-left: .5%;
+    }
+
+    .botaoImprimir, .botaoSalvar, .botaoSalvar--desabilitado, .botaoImprimir:disabled, .botaoSalvar:enabled{
+        font-size: .8rem;
+        padding: 1.5px 0;
     }
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 699px) {
+
+    .navegacaoLinks {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        max-width: min-content;
+    }
+
+    .link-lista, .link-cadastro .botao-cadastro {
+        font-size: 14px;
+        text-align: center;
+        width: 200px;
+        padding: 10px 0;
+    }
 
     .formularioNotas {
         display: flex;
