@@ -3,6 +3,7 @@
     header,
     #botaoVoltar,
     .botoes,
+    .notification-box,
     #non-printable {
         display: none !important;
     }
