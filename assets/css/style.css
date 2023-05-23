@@ -94,7 +94,7 @@ h2 {
         background-color: #fff;
         display: flex;
     }
-    
+
     .container {
         width: 100%;
         display: flex;
@@ -104,19 +104,20 @@ h2 {
         align-items: center;
         justify-content: space-evenly;
     }
-    
+
     .logo-cabecalho {
         max-width: 9em;
         margin-left: 5%;
     }
-    
+
     .navegacaoLinks {
 
         max-width: 400px;
         margin-right: 0;
     }
 
-    .link-lista, .link-cadastro .botao-cadastro {
+    .link-lista,
+    .link-cadastro .botao-cadastro {
         flex-shrink: 2;
         margin: 0 0 0 0;
     }
@@ -124,6 +125,7 @@ h2 {
     .link-cadastro .botao-cadastro {
         margin-left: 25px;
     }
+
     .conteudo-principal {
         max-width: fit-content;
         display: flex;
@@ -168,6 +170,8 @@ h2 {
         flex-direction: column;
         justify-content: space-between;
         background-color: #fff;
+        padding-bottom: 20px;
+
     }
 
     .logo-cabecalho {
@@ -175,7 +179,7 @@ h2 {
         min-width: 5em;
         margin: 0px;
     }
-    
+
     .navegacaoLinks {
         display: flex;
         width: fit-content;
@@ -205,8 +209,9 @@ h2 {
         border-radius: 4px;
         cursor: pointer;
     }
-    
-    .link-lista, .link-cadastro .botao-cadastro {
+
+    .link-lista,
+    .link-cadastro .botao-cadastro {
         font-size: 16px;
         text-align: center;
         width: 200px;
@@ -214,7 +219,7 @@ h2 {
         margin: 3px auto;
         justify-content: center;
     }
-    
+
     .conteudo-principal {
         max-width: fit-content;
         display: flex;
